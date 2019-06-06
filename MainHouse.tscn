@@ -1,0 +1,55 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Images/main_building.png" type="Texture" id=1]
+[ext_resource path="res://ObjectSprite.gd" type="Script" id=2]
+[ext_resource path="res://WindowLight.tscn" type="PackedScene" id=3]
+[ext_resource path="res://WindowLight2.tscn" type="PackedScene" id=4]
+
+[sub_resource type="OccluderPolygon2D" id=1]
+polygon = PoolVector2Array( 0, 27, 96, 27, 96, 25, 0, 25 )
+
+[node name="MainHouse" type="StaticBody2D"]
+
+[node name="ObjectSprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="Lights" type="Node2D" parent="ObjectSprite"]
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="ObjectSprite/Lights"]
+light_mask = 1025
+position = Vector2( 0, 3 )
+occluder = SubResource( 1 )
+light_mask = 1025
+
+[node name="WindowLight" parent="ObjectSprite/Lights" instance=ExtResource( 3 )]
+position = Vector2( -177, 108 )
+
+[node name="WindowLight2" parent="ObjectSprite/Lights" instance=ExtResource( 3 )]
+position = Vector2( -81, 108 )
+
+[node name="WindowLight3" parent="ObjectSprite/Lights" instance=ExtResource( 3 )]
+position = Vector2( -73, 12 )
+
+[node name="WindowLight4" parent="ObjectSprite/Lights" instance=ExtResource( 3 )]
+position = Vector2( -125, 12 )
+
+[node name="WindowLight5" parent="ObjectSprite/Lights" instance=ExtResource( 3 )]
+position = Vector2( 179, 12 )
+
+[node name="WindowLight6" parent="ObjectSprite/Lights" instance=ExtResource( 3 )]
+position = Vector2( 127, 108 )
+
+[node name="WindowLight7" parent="ObjectSprite/Lights" instance=ExtResource( 4 )]
+position = Vector2( 32, -5 )
+
+[node name="WindowLight8" parent="ObjectSprite/Lights" instance=ExtResource( 4 )]
+position = Vector2( 64, -5 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
+polygon = PoolVector2Array( -240, 140, -224, 140, -224, 156, -208, 156, -208, 140, -48, 140, -48, 156, -32, 156, -32, 140, -1, 140, 0, -156, -240, -156 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="."]
+visible = false
+polygon = PoolVector2Array( 96, 140, 200, 140, 200, 156, 216, 156, 216, 140, 240, 140, 240, -156, 96, -156 )

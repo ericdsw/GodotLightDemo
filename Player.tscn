@@ -1,0 +1,36 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://LightInteractor.shader" type="Shader" id=1]
+[ext_resource path="res://player.gd" type="Script" id=2]
+[ext_resource path="res://Images/MC_OVERWORLD_IDLE_DOWN_1.png" type="Texture" id=3]
+[ext_resource path="res://ObjectSprite.gd" type="Script" id=4]
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 1 )
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = ExtResource( 1 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 8.52264, 3.78189 )
+
+[node name="Player" type="KinematicBody2D" groups=[
+"Object",
+]]
+material = SubResource( 1 )
+position = Vector2( 370, 420 )
+script = ExtResource( 2 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( -240, -130 )
+anchor_mode = 0
+current = true
+
+[node name="ObjectSprite" type="Sprite" parent="."]
+material = SubResource( 2 )
+texture = ExtResource( 3 )
+script = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -0.493988, 21.4064 )
+shape = SubResource( 3 )

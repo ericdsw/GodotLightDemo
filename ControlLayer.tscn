@@ -1,0 +1,172 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://ControlLayer.gd" type="Script" id=1]
+
+[node name="ControlLayer" type="CanvasLayer"]
+layer = 2
+script = ExtResource( 1 )
+
+[node name="CheckBox" type="CheckBox" parent="."]
+margin_right = 24.0
+margin_bottom = 24.0
+
+[node name="Label" type="Label" parent="."]
+margin_left = 22.0
+margin_top = 6.0
+margin_right = 90.0
+margin_bottom = 20.0
+text = "Show/Hide"
+
+[node name="VBoxContainer" type="Control" parent="."]
+editor/display_folded = true
+margin_left = 5.0
+margin_top = 27.0
+margin_right = 45.0
+margin_bottom = 67.0
+
+[node name="HBoxContainer" type="Control" parent="VBoxContainer"]
+editor/display_folded = true
+margin_right = 268.0
+margin_bottom = 24.0
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer"]
+margin_top = 5.0
+margin_right = 33.0
+margin_bottom = 19.0
+text = "Color"
+
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer/HBoxContainer"]
+margin_left = 102.0
+margin_right = 212.0
+margin_bottom = 24.0
+
+[node name="ColorPickerButton" type="ColorPickerButton" parent="VBoxContainer/HBoxContainer"]
+margin_left = 221.0
+margin_top = 1.0
+margin_right = 233.0
+margin_bottom = 21.0
+text = "Pick"
+edit_alpha = false
+
+[node name="HBoxContainer2" type="Control" parent="VBoxContainer"]
+editor/display_folded = true
+margin_top = 28.0
+margin_right = 213.0
+margin_bottom = 52.0
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2"]
+margin_top = 5.0
+margin_right = 53.0
+margin_bottom = 19.0
+text = "Contrast"
+
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer/HBoxContainer2"]
+margin_left = 102.0
+margin_right = 212.0
+margin_bottom = 24.0
+
+[node name="HBoxContainer3" type="Control" parent="VBoxContainer"]
+editor/display_folded = true
+margin_top = 56.0
+margin_right = 212.0
+margin_bottom = 80.0
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer3"]
+margin_top = 5.0
+margin_right = 64.0
+margin_bottom = 19.0
+text = "Saturation"
+
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer/HBoxContainer3"]
+margin_left = 102.0
+margin_right = 212.0
+margin_bottom = 24.0
+
+[node name="HBoxContainer4" type="Control" parent="VBoxContainer"]
+editor/display_folded = true
+margin_top = 84.0
+margin_right = 212.0
+margin_bottom = 108.0
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer4"]
+margin_top = 5.0
+margin_right = 68.0
+margin_bottom = 19.0
+text = "Brightness"
+
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer/HBoxContainer4"]
+margin_left = 102.0
+margin_right = 212.0
+margin_bottom = 24.0
+
+[node name="HBoxContainer5" type="Control" parent="VBoxContainer"]
+editor/display_folded = true
+margin_top = 112.0
+margin_right = 213.0
+margin_bottom = 136.0
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer5"]
+margin_top = 5.0
+margin_right = 81.0
+margin_bottom = 19.0
+text = "Pop Strength"
+
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer/HBoxContainer5"]
+margin_left = 102.0
+margin_right = 212.0
+margin_bottom = 24.0
+
+[node name="HBoxContainer6" type="Control" parent="VBoxContainer"]
+editor/display_folded = true
+margin_top = 140.0
+margin_right = 213.0
+margin_bottom = 164.0
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer6"]
+margin_top = 5.0
+margin_right = 91.0
+margin_bottom = 19.0
+text = "Pop Threshold"
+
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer/HBoxContainer6"]
+margin_left = 102.0
+margin_right = 212.0
+margin_bottom = 24.0
+
+[node name="HBoxContainer7" type="Control" parent="VBoxContainer"]
+margin_top = 168.0
+margin_right = 212.0
+margin_bottom = 192.0
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer7"]
+margin_top = 5.0
+margin_right = 88.0
+margin_bottom = 19.0
+text = "Light Strength"
+
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer/HBoxContainer7"]
+margin_left = 102.0
+margin_right = 212.0
+margin_bottom = 24.0
+
+[node name="PresetButton" type="MenuButton" parent="VBoxContainer"]
+margin_left = 316.103
+margin_top = 0.622276
+margin_right = 448.103
+margin_bottom = 20.6223
+text = "or Choose a Preset"
+
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer/PresetButton"]
+show_behind_parent = true
+margin_right = 133.0
+margin_bottom = 20.0
+mouse_filter = 2
+color = Color( 0.145098, 0.145098, 0.145098, 1 )
+[connection signal="toggled" from="CheckBox" to="." method="_on_CheckBox_toggled"]
+[connection signal="text_entered" from="VBoxContainer/HBoxContainer/LineEdit" to="." method="_on_input_changed" binds= [ "color" ]]
+[connection signal="text_entered" from="VBoxContainer/HBoxContainer2/LineEdit" to="." method="_on_input_changed" binds= [ "contrast" ]]
+[connection signal="text_entered" from="VBoxContainer/HBoxContainer3/LineEdit" to="." method="_on_input_changed" binds= [ "saturation" ]]
+[connection signal="text_entered" from="VBoxContainer/HBoxContainer4/LineEdit" to="." method="_on_input_changed" binds= [ "brightness" ]]
+[connection signal="text_entered" from="VBoxContainer/HBoxContainer5/LineEdit" to="." method="_on_input_changed" binds= [ "pop_strength" ]]
+[connection signal="text_entered" from="VBoxContainer/HBoxContainer6/LineEdit" to="." method="_on_input_changed" binds= [ "pop_threshold" ]]
+[connection signal="text_entered" from="VBoxContainer/HBoxContainer7/LineEdit" to="." method="_on_input_changed" binds= [ "light_strength" ]]
