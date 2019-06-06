@@ -22,7 +22,7 @@ texture = ExtResource( 2 )
 "Light",
 ]]
 texture = ExtResource( 2 )
-color = Color( 0.980392, 1, 0.737255, 1 )
+color = Color( 0.94902, 0.980392, 0.552941, 1 )
 mode = 2
 range_item_cull_mask = 4
 

@@ -25,7 +25,7 @@ func apply_properties(properties: DayTimeProperties) -> void:
 	
 	for light in get_tree().get_nodes_in_group("Light"):
 		light.energy = properties.light_strength
-#	for light_sprite in get_tree().get_nodes_in_group("LightSprite"):
-#		light_sprite.modulate.a = properties.light_strength
+	for light_sprite in get_tree().get_nodes_in_group("LightSprite"):
+		light_sprite.modulate.a = properties.light_strength
 	
 #	material.set_shader_param("light_strength", properties.light_strength)
