@@ -18,14 +18,12 @@ margin_bottom = 20.0
 text = "Show/Hide"
 
 [node name="VBoxContainer" type="Control" parent="."]
-editor/display_folded = true
 margin_left = 5.0
 margin_top = 27.0
 margin_right = 45.0
 margin_bottom = 67.0
 
 [node name="HBoxContainer" type="Control" parent="VBoxContainer"]
-editor/display_folded = true
 margin_right = 268.0
 margin_bottom = 24.0
 
@@ -149,7 +147,32 @@ margin_left = 102.0
 margin_right = 212.0
 margin_bottom = 24.0
 
+[node name="HBoxContainer8" type="Control" parent="VBoxContainer"]
+margin_top = 196.0
+margin_right = 212.0
+margin_bottom = 220.0
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer8"]
+margin_top = 5.0
+margin_right = 88.0
+margin_bottom = 19.0
+text = "Light Color"
+
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer/HBoxContainer8"]
+margin_left = 102.0
+margin_right = 212.0
+margin_bottom = 24.0
+
+[node name="ColorPickerButton" type="ColorPickerButton" parent="VBoxContainer/HBoxContainer8"]
+margin_left = 221.0
+margin_top = 2.0
+margin_right = 259.0
+margin_bottom = 22.0
+text = "Pick"
+edit_alpha = false
+
 [node name="PresetButton" type="MenuButton" parent="VBoxContainer"]
+editor/display_folded = true
 margin_left = 316.103
 margin_top = 0.622276
 margin_right = 448.103
@@ -170,3 +193,4 @@ color = Color( 0.145098, 0.145098, 0.145098, 1 )
 [connection signal="text_entered" from="VBoxContainer/HBoxContainer5/LineEdit" to="." method="_on_input_changed" binds= [ "pop_strength" ]]
 [connection signal="text_entered" from="VBoxContainer/HBoxContainer6/LineEdit" to="." method="_on_input_changed" binds= [ "pop_threshold" ]]
 [connection signal="text_entered" from="VBoxContainer/HBoxContainer7/LineEdit" to="." method="_on_input_changed" binds= [ "light_strength" ]]
+[connection signal="text_entered" from="VBoxContainer/HBoxContainer8/LineEdit" to="." method="_on_input_changed" binds= [ "light_color" ]]

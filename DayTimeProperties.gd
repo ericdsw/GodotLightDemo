@@ -10,11 +10,12 @@ var brightness : float setget _set_brightness, _get_brightness
 var pop_strength : float setget _set_pop_strength, _get_pop_strength
 var pop_threshold : float setget _set_pop_threshold, _get_pop_threshold
 var light_strength : float setget _set_light_strength, _get_light_strength
+var light_color : Color setget _set_light_color, _get_light_color
 
 func _init(
 		_filter_color: Color, _contrast: float, _saturation: float, 
 		_brightness: float, _pop_strength: float, _pop_threshold: float,
-		_light_strength: float
+		_light_strength: float, _light_color: Color = Color("#fff")
 	) -> void:
 	
 	filter_color = _filter_color
@@ -24,6 +25,7 @@ func _init(
 	pop_strength = _pop_strength
 	pop_threshold = _pop_threshold
 	light_strength = _light_strength
+	light_color = _light_color
 
 func update_from_property(property: DayTimeProperties) -> void:
 	filter_color = property.filter_color
@@ -63,6 +65,10 @@ func _set_light_strength(_light_strength: float) -> void:
 	light_strength = _light_strength
 	emit_signal("property_updated")
 
+func _set_light_color(_light_color: Color) -> void:
+	light_color = _light_color
+	emit_signal("property_updated")
+
 func _get_filter_color() -> Color: 
 	return filter_color
 
@@ -83,3 +89,6 @@ func _get_pop_threshold() -> float:
 
 func _get_light_strength() -> float:
 	return light_strength
+
+func _get_light_color() -> Color:
+	return light_color

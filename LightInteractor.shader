@@ -6,7 +6,7 @@ void light() {
 
 	// Only apply if the vertical distance is greater than 0
 	if (vertical_distance > 0.0) {
-		float used_value = 35.0 / vertical_distance;
+		float used_value = 15.0 / (vertical_distance * 0.8);
 		LIGHT *= clamp(used_value, 0.0, 1.0);
 	}
 

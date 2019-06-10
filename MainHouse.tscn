@@ -15,6 +15,7 @@ texture = ExtResource( 1 )
 script = ExtResource( 2 )
 
 [node name="Lights" type="Node2D" parent="ObjectSprite"]
+editor/display_folded = true
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="ObjectSprite/Lights"]
 light_mask = 1025
@@ -47,9 +48,7 @@ position = Vector2( 32, -5 )
 position = Vector2( 64, -5 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-visible = false
 polygon = PoolVector2Array( -240, 140, -224, 140, -224, 156, -208, 156, -208, 140, -48, 140, -48, 156, -32, 156, -32, 140, -1, 140, 0, -156, -240, -156 )
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="."]
-visible = false
 polygon = PoolVector2Array( 96, 140, 200, 140, 200, 156, 216, 156, 216, 140, 240, 140, 240, -156, 96, -156 )

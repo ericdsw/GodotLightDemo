@@ -16,4 +16,5 @@ func _process(delta: float) -> void:
 		movement.x -= 1
 	if Input.is_action_pressed("right"):
 		movement.x += 1
-	position += movement.normalized() * 150.00 * delta
+	
+	move_and_slide(movement.normalized() * 150.00)
